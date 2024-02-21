@@ -82,6 +82,35 @@ export const StartCountdownButton = styled.button`
   }
 `
 
+export const StopCountdownButton = styled.button`
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+  font-weight: bold;
+  background-color: ${({ theme }) => theme['red-500']};
+  cursor: pointer;
+  color: ${({ theme }) => theme['gray-100']};
+
+  transition: all ease-in-out 250ms;
+
+  &:not(:disabled):hover {
+    color: ${({ theme }) => theme['red-500']};
+    background-color: ${({ theme }) => theme['gray-100']};
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+`
+
 const BaseInput = styled.input`
   background: transparent;
   border: none;
