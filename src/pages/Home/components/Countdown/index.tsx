@@ -21,14 +21,14 @@ export function Countdown() {
       interval = setInterval(() => {
         const secondsDifference = differenceInSeconds(
           new Date(),
-          activeCycle.startDate,
+          new Date(activeCycle.startDate),
         )
         if (secondsDifference >= totalSeconds) {
           markCurrentCycleAsFinished()
-          setSecondsPassed(totalSeconds, 1)
+          setSecondsPassed(totalSeconds)
           clearInterval(interval)
         } else {
-          setSecondsPassed(secondsDifference, 2)
+          setSecondsPassed(secondsDifference)
         }
       }, 1000)
     }
